@@ -148,4 +148,4 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # ll to list files
-alias ll='ls -lah'
+alias ll='ls -lAh ${colorflag}'
