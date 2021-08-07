@@ -3,10 +3,10 @@
 # Install command-line tools using pip.
 
 # Make sure we’re using the latest pip.
-# brew update
+ brew update
 
 # Upgrade any already-installed packages.
-# brew upgrade
+ brew upgrade
 
 # install pygments (required for json function)
 pip install pygments
