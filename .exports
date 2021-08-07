@@ -35,3 +35,6 @@ export GPG_TTY=$(tty);
 
 # Set default postgres host (necessary for psql to pickup a local docker psql instance)
 export PGHOST='127.0.0.1'
+
+# Hide the “default interactive shell is now zsh” warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1;
