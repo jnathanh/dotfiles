@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# add mac gem bins to path
+export PATH=/usr/local/bin/:$PATH
+
+# add homebrew sbin to path (brew doctor told me to)
+export PATH=/usr/local/sbin:$PATH
