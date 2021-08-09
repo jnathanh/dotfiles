@@ -7,7 +7,7 @@ First make sure your github ssh key has been copied to or created in the ~/.ssh/
 ```bash
 # add your ssh key to ~/.ssh/
 ssh-add ~/.ssh/your_key_name_here
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/jnathanh/dotfiles/main/first-time-setup.sh)"
+/bin/bash -c "$(curl -H 'Cache-Control: no-cache' -fsSL https://raw.githubusercontent.com/jnathanh/dotfiles/main/first-time-setup.sh)"
 ```
 
 ### Using Git and the bootstrap script
