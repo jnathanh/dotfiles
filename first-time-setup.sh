@@ -4,17 +4,6 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 UNCOLOR='\033[0m'
 
-## xcode command line tools (required in order to use git
-#echo -n installing xcode command line tools
-#
-#ERROR=$(xcode-select --install 2>&1 >/dev/null) # save stderr to $ERROR var instead of printing
-#
-#case $? in
-#    1) echo -e "\t${GREEN}already installed${UNCOLOR}";;
-#    0) echo -e "\t${GREEN}Done${UNCOLOR}";;
-#    *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";;
-#esac
-
 # homebrew (this is the primary method of managing packages)
 echo -n installing homebrew
 
