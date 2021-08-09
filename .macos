@@ -841,8 +841,8 @@ defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 ###############################################################################
 
 # Save screenshots to ~/temp
-mkdir -p ~/temp
-defaults write com.apple.screencapture location ~/temp
+mkdir -p ${HOME}/tmp
+defaults write com.apple.screencapture location ${HOME}/tmp
 
 ###############################################################################
 # Sublime Text                                                                #
