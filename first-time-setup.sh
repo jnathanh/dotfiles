@@ -2,36 +2,37 @@
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
-UNCOLOR='\033[0m'
+UNDERLINE='\033[4m'
+UNFMT='\033[0m'
 
 # homebrew (this is the primary method of managing packages)
-echo installing homebrew
+echo "${UNDERLINE}installing homebrew${UNFMT}"
 
 if ! (brew -v >/dev/null 2>&1); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     case $? in
-        0) echo -e "${GREEN}installed homebrew${UNCOLOR}";;
-        *) echo -e "${RED}error installing homebrew${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}installed homebrew${UNFMT}";;
+        *) echo -e "${RED}error installing homebrew${UNFMT}";exit 1;;
     esac
 else
-    echo -e "${GREEN}homebrew already installed${UNCOLOR}";
+    echo -e "${GREEN}homebrew already installed${UNFMT}";
 fi
 
 # make sure github is a trusted host (avoid auth failure on first execution)
 if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
-    echo adding github.com to known hosts
+    echo "${UNDERLINE}adding github.com to known hosts${UNFMT}"
 
     sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
 
     case $? in
-        0) echo -e "${GREEN}done${UNCOLOR}";;
-        *) echo -e "${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}done${UNFMT}";;
+        *) echo -e "${RED}${ERROR}${UNFMT}";exit 1;;
     esac
 fi
 
 # download latest dotfiles
-echo "downloading latest dotfiles"
+echo "${UNDERLINE}downloading latest dotfiles${UNFMT}"
 
 DOTFILES_DIR="${HOME}/src"
 DOTFILES_PATH="${DOTFILES_DIR}/dotfiles"
@@ -47,8 +48,8 @@ if [[ -d ${DOTFILES_PATH} ]]; then
     )
 
     case $? in
-        0) echo -e "${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNCOLOR}";;
-        *) echo -e "${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNFMT}";;
+        *) echo -e "${RED}${ERROR}${UNFMT}";exit 1;;
     esac
 else
     ERROR=$(
@@ -57,8 +58,8 @@ else
     )
 
     case $? in
-        0) echo -e "${GREEN}downloaded to ${DOTFILES_PATH}${UNCOLOR}";;
-        *) echo -e "${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}downloaded to ${DOTFILES_PATH}${UNFMT}";;
+        *) echo -e "${RED}${ERROR}${UNFMT}";exit 1;;
     esac
 fi
 
