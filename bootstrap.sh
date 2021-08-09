@@ -66,7 +66,7 @@ fi
 cd ${DOTFILES_PATH}
 
 # configure mac settings
-echo "$(pwd)"
+echo "the pwd is $(pwd)"
 ${DOTFILES_PATH}/.macos
 
 # update homebrew state
