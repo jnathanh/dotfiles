@@ -38,3 +38,6 @@ export PGHOST='127.0.0.1'
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
+
+# homebrew exports
+eval "$(/opt/homebrew/bin/brew shellenv)"
