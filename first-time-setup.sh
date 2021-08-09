@@ -14,10 +14,22 @@ if ! (brew -v >/dev/null 2>&1); then
 
     case $? in
         0) echo -e "\n\t${GREEN}Done${UNCOLOR}";;
-        *) echo -e "\n${RED}Error installing Homebrew${UNCOLOR}";;
+        *) echo -e "\n${RED}Error installing Homebrew${UNCOLOR}";exit 1;;
     esac
 else
     echo -e "\t\t\t${GREEN}already installed${UNCOLOR}";
+fi
+
+# make sure github is a trusted host (avoid auth failure on first execution)
+if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
+    echo -n adding github.com to known hosts
+
+    ERROR=$(sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts 2>&1 >/dev/null)
+
+    case $? in
+        0) echo -e "\n${GREEN}Done${UNCOLOR}";;
+        *) echo -e "\n${RED}${ERROR}${UNCOLOR}";exit 1;;
+    esac
 fi
 
 # download latest dotfiles
@@ -38,26 +50,18 @@ if [[ -d ${DOTFILES_PATH} ]]; then
 
     case $? in
         0) echo -e "\t\t${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNCOLOR}";;
-        *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";;
+        *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 else
     ERROR=$(
         set -e
-        # avoid failing on new computer setups due to unknown github host
-        if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
-            echo no github entry found in known hosts
-            sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
-            echo known hosts:
-            cat ${HOME}/.ssh/known_hosts
-        fi
-
         cd ${DOTFILES_DIR} 2>&1 >/dev/null
         git clone git@github.com:jnathanh/dotfiles.git 2>&1 >/dev/null
     )
 
     case $? in
         0) echo -e "\t\t${GREEN}downloaded to ${DOTFILES_PATH}${UNCOLOR}";;
-        *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";;
+        *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 fi
 
