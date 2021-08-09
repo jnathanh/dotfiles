@@ -65,6 +65,13 @@ fi
 
 cd ${DOTFILES_DIR}
 
+# configure mac settings
+./.macos
+
+# update homebrew state
+./brew.sh
+
+# sync dotfiles to ~
 function doIt() {
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
