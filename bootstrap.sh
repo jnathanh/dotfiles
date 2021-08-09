@@ -63,7 +63,7 @@ else
     esac
 fi
 
-cd ${DOTFILES_DIR}
+cd ${DOTFILES_PATH}
 
 # configure mac settings
 ./.macos
