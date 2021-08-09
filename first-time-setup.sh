@@ -43,6 +43,11 @@ if [[ -d ${DOTFILES_PATH} ]]; then
 else
     ERROR=$(
         set -e
+        # avoid failing on new computer setups due to unknown github host
+        if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
+          ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
+        fi
+
         cd ${DOTFILES_DIR} 2>&1 >/dev/null
         git clone git@github.com:jnathanh/dotfiles.git 2>&1 >/dev/null
     )
