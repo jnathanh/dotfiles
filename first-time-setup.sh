@@ -13,8 +13,8 @@ if ! (brew -v >/dev/null 2>&1); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     case $? in
-        0) echo "${GREEN}installed homebrew${UNCOLOR}";;
-        *) echo "${RED}error installing homebrew${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}installed homebrew${UNCOLOR}";;
+        *) echo -e "${RED}error installing homebrew${UNCOLOR}";exit 1;;
     esac
 else
     echo "${GREEN}homebrew already installed${UNCOLOR}";
@@ -27,8 +27,8 @@ if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
     ERROR=$(sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts 2>&1 >/dev/null)
 
     case $? in
-        0) echo "${GREEN}done${UNCOLOR}";;
-        *) echo "${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}done${UNCOLOR}";;
+        *) echo -e "${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 fi
 
@@ -49,8 +49,8 @@ if [[ -d ${DOTFILES_PATH} ]]; then
     )
 
     case $? in
-        0) echo "${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNCOLOR}";;
-        *) echo "${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNCOLOR}";;
+        *) echo -e "${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 else
     ERROR=$(
@@ -59,8 +59,8 @@ else
     )
 
     case $? in
-        0) echo "${GREEN}downloaded to ${DOTFILES_PATH}${UNCOLOR}";;
-        *) echo "${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo -e "${GREEN}downloaded to ${DOTFILES_PATH}${UNCOLOR}";;
+        *) echo -e "${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 fi
 
