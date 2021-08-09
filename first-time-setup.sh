@@ -22,7 +22,7 @@ fi
 if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
     echo adding github.com to known hosts
 
-    ERROR=$(sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts 2>&1 >/dev/null)
+    sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
 
     case $? in
         0) echo -e "${GREEN}done${UNCOLOR}";;
