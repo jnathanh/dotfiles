@@ -44,7 +44,7 @@ if [[ -d ${DOTFILES_PATH} ]]; then
         set -e
         cd ${DOTFILES_PATH} 2>&1 >/dev/null
         git checkout main  2>&1 >/dev/null
-        git pull 2>&1 >/dev/null
+        git pull origin main 2>&1 >/dev/null
     )
 
     case $? in
@@ -63,12 +63,7 @@ else
     esac
 fi
 
-# set bash as default shell
-chsh -s /bin/bash
-
-cd "$(dirname "${BASH_SOURCE}")";
-
-git pull origin main;
+cd ${DOTFILES_DIR}
 
 function doIt() {
 	rsync --exclude ".git/" \
