@@ -41,12 +41,14 @@ if [[ -d ${DOTFILES_PATH} ]]; then
         *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";;
     esac
 else
-    echo "who am i?: $(whoami)"
     ERROR=$(
         set -e
         # avoid failing on new computer setups due to unknown github host
         if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
-          ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
+            echo no github entry found in known hosts
+            sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
+            echo known hosts:
+            cat ${HOME}/.ssh/known_hosts
         fi
 
         cd ${DOTFILES_DIR} 2>&1 >/dev/null
