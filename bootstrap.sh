@@ -63,6 +63,9 @@ else
     esac
 fi
 
+# set bash as default shell
+chsh -s /bin/bash
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin main;
