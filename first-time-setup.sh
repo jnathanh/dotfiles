@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 UNCOLOR='\033[0m'
 
 # homebrew (this is the primary method of managing packages)
-echo -n installing homebrew
+echo installing homebrew
 
 if ! (brew -v >/dev/null 2>&1); then
      echo; # so brew install output doesn't start on same line
@@ -13,27 +13,27 @@ if ! (brew -v >/dev/null 2>&1); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     case $? in
-        0) echo -e "\n\t${GREEN}Done${UNCOLOR}";;
-        *) echo -e "\n${RED}Error installing Homebrew${UNCOLOR}";exit 1;;
+        0) echo "${GREEN}installed homebrew${UNCOLOR}";;
+        *) echo "${RED}error installing homebrew${UNCOLOR}";exit 1;;
     esac
 else
-    echo -e "\t\t\t${GREEN}already installed${UNCOLOR}";
+    echo "${GREEN}homebrew already installed${UNCOLOR}";
 fi
 
 # make sure github is a trusted host (avoid auth failure on first execution)
 if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
-    echo -n adding github.com to known hosts
+    echo adding github.com to known hosts
 
     ERROR=$(sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts 2>&1 >/dev/null)
 
     case $? in
-        0) echo -e "\n${GREEN}Done${UNCOLOR}";;
-        *) echo -e "\n${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo "${GREEN}done${UNCOLOR}";;
+        *) echo "${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 fi
 
 # download latest dotfiles
-echo -n "downloading latest dotfiles"
+echo "downloading latest dotfiles"
 
 DOTFILES_DIR="${HOME}/src"
 DOTFILES_PATH="${DOTFILES_DIR}/dotfiles"
@@ -49,19 +49,18 @@ if [[ -d ${DOTFILES_PATH} ]]; then
     )
 
     case $? in
-        0) echo -e "\t\t${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNCOLOR}";;
-        *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo "${GREEN}updated local dotfiles (${DOTFILES_PATH}) from origin${UNCOLOR}";;
+        *) echo "${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 else
     ERROR=$(
-        set -e
-        cd ${DOTFILES_DIR} 2>&1 >/dev/null
-        git clone git@github.com:jnathanh/dotfiles.git 2>&1 >/dev/null
+        cd ${DOTFILES_DIR}
+        git clone git@github.com:jnathanh/dotfiles.git
     )
 
     case $? in
-        0) echo -e "\t\t${GREEN}downloaded to ${DOTFILES_PATH}${UNCOLOR}";;
-        *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";exit 1;;
+        0) echo "${GREEN}downloaded to ${DOTFILES_PATH}${UNCOLOR}";;
+        *) echo "${RED}${ERROR}${UNCOLOR}";exit 1;;
     esac
 fi
 
