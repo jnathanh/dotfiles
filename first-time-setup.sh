@@ -29,7 +29,6 @@ DOTFILES_PATH="${DOTFILES_DIR}/dotfiles"
 mkdir -p ${DOTFILES_DIR}
 
 if [[ -d ${DOTFILES_PATH} ]]; then
-    echo "who am i?: $(whoami)"
     ERROR=$(
         set -e
         cd ${DOTFILES_PATH} 2>&1 >/dev/null
@@ -42,6 +41,7 @@ if [[ -d ${DOTFILES_PATH} ]]; then
         *) echo -e "\n\t${RED}${ERROR}${UNCOLOR}";;
     esac
 else
+    echo "who am i?: $(whoami)"
     ERROR=$(
         set -e
         # avoid failing on new computer setups due to unknown github host
