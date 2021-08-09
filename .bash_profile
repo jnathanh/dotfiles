@@ -56,4 +56,4 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 export RECIPE_HOME="/Users/nhanna//Dropbox/recipes"
 
 # add ssh keys to agent
-ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/jnathanh_github_id_rsa

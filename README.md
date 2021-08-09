@@ -2,7 +2,7 @@
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-First make sure your github ssh key has been set up on your computer (if it is a first run).
+First make sure your github ssh key has been copied to or created in the ~/.ssh/ directory and has been added to your agent `ssh-add path_to_private_key`.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/jnathanh/dotfiles/main/first-time-setup.sh)"
