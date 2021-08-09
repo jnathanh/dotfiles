@@ -29,6 +29,7 @@ DOTFILES_PATH="${DOTFILES_DIR}/dotfiles"
 mkdir -p ${DOTFILES_DIR}
 
 if [[ -d ${DOTFILES_PATH} ]]; then
+    whoami
     ERROR=$(
         set -e
         cd ${DOTFILES_PATH} 2>&1 >/dev/null
