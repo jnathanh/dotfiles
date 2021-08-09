@@ -17,7 +17,7 @@ if ! (brew -v >/dev/null 2>&1); then
         *) echo -e "${RED}error installing homebrew${UNCOLOR}";exit 1;;
     esac
 else
-    echo -e "${GREEN}homebrew already installed${UNCOLOR}";
+    echo -e "${GREEN} homebrew already installed${UNCOLOR}";
 fi
 
 # make sure github is a trusted host (avoid auth failure on first execution)
