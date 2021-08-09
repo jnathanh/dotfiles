@@ -18,7 +18,7 @@ UNCOLOR='\033[0m'
 # homebrew (this is the primary method of managing packages)
 echo -n installing homebrew
 
-if ! brew -v 2>&1 >/dev/null; then
+if ! (brew -v >/dev/null 2>&1); then
      echo; # so brew install output doesn't start on same line
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
