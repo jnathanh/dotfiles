@@ -6,7 +6,7 @@ UNDERLINE='\033[4m'
 UNFMT='\033[0m'
 
 # homebrew (this is the primary method of managing packages)
-echo "${UNDERLINE}installing homebrew${UNFMT}"
+echo -e "${UNDERLINE}installing homebrew${UNFMT}"
 
 if ! (brew -v >/dev/null 2>&1); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -21,7 +21,7 @@ fi
 
 # make sure github is a trusted host (avoid auth failure on first execution)
 if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
-    echo "${UNDERLINE}adding github.com to known hosts${UNFMT}"
+    echo -e "${UNDERLINE}adding github.com to known hosts${UNFMT}"
 
     sudo ssh-keyscan -t rsa github.com >> ${HOME}/.ssh/known_hosts
 
@@ -32,7 +32,7 @@ if ! grep -q "^github.com" ${HOME}/.ssh/known_hosts; then
 fi
 
 # download latest dotfiles
-echo "${UNDERLINE}downloading latest dotfiles${UNFMT}"
+echo -e "${UNDERLINE}downloading latest dotfiles${UNFMT}"
 
 DOTFILES_DIR="${HOME}/src"
 DOTFILES_PATH="${DOTFILES_DIR}/dotfiles"
