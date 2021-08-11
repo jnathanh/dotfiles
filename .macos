@@ -182,17 +182,15 @@ sudo pmset -a autorestart 1
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+# While charging
+sudo pmset -c displaysleep 15    # Sleep the display after 15 minutes
+sudo pmset -c sleep 0            # Disable machine sleep while charging
+sudo pmset -c standbydelay 86400 # Set standby delay to 24 hours (default is 1 hour)
 
-# Disable machine sleep while charging
-sudo pmset -c sleep 0
-
-# Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
-
-# Set standby delay to 24 hours (default is 1 hour)
-# sudo pmset -a standbydelay 86400
+# While on battery
+sudo pmset -b displaysleep 4    # Sleep the display after 4 minutes
+sudo pmset -b sleep 5           # Machine sleep after 5 minutes
+sudo pmset -b standbydelay 3600 # Set standby delay to default (1 hour)
 
 # Never go into computer sleep mode
 # sudo systemsetup -setcomputersleep Off > /dev/null
