@@ -5,6 +5,15 @@ GREEN='\033[0;32m'
 UNDERLINE='\033[4m'
 UNFMT='\033[0m'
 
+# log the command and location of failures
+set -eE -o functrace
+failure() {
+  local lineno=$1
+  local msg=$2
+  echo "Failed at $3:$lineno: $msg"
+}
+trap 'failure ${LINENO} "$BASH_COMMAND" "$BASH_SOURCE"' ERR
+
 # homebrew (this is the primary method of managing packages)
 echo -e "${UNDERLINE}installing homebrew${UNFMT}"
 
