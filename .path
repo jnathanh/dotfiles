@@ -6,3 +6,4 @@ export PATH=/usr/local/bin/:$PATH
 # add homebrew binaries to path
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH" # use gnu sed over built-in sed

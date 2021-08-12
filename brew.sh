@@ -18,8 +18,8 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+# Install GNU `sed`, (overwrites the built-in `sed` via earlier PATH insertion, see .path file).
+brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
