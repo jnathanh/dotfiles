@@ -103,6 +103,7 @@ brew install -q --cask dropbox
 brew install -q --cask adobe-dng-converter # required by lrtimelapse
 brew install -q --cask lrtimelapse         # time lapse app with lightroom integration
 brew install -q --cask sublime-text
+brew install -q --cask rectangle
 
 # Remove outdated versions from the cellar.
 brew cleanup
