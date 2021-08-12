@@ -96,12 +96,12 @@ brew install vbindiff
 brew install zopfli
 
 # Install Casks (GUI binaries)
-brew cask install typora # markdown editor/browser
-brew cask install mark-text # the original typora was branched from, but performs better where typora has bugs
-brew cask install todotxt # todo.txt GUI
-brew cask install dropbox
-brew cask install adobe-dng-converter # required by lrtimelapse
-brew cask install lrtimelapse # time lapse app with lightroom integration
+brew install --cask typora    # markdown editor/browser
+brew install --cask mark-text # the original typora was branched from, but performs better where typora has bugs
+brew install --cask todotxt   # todo.txt GUI
+brew install --cask dropbox
+brew install --cask adobe-dng-converter # required by lrtimelapse
+brew install --cask lrtimelapse         # time lapse app with lightroom integration
 
 # Remove outdated versions from the cellar.
 brew cleanup
