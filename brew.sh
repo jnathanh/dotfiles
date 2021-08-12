@@ -41,59 +41,58 @@ brew install -q vim
 brew install -q grep
 brew install -q openssh
 brew install -q screen
-#brew install -q php
-#brew install -q gmp
+# brew install -q php
+# brew install -q gmp
 
 # Install font tools.
-#brew tap bramstein/webfonttools
-#brew install -q sfnt2woff
-#brew install -q sfnt2woff-zopfli
-#brew install -q woff2
+# brew tap bramstein/webfonttools
+# brew install -q sfnt2woff
+# brew install -q sfnt2woff-zopfli
+# brew install -q woff2
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-#brew install -q aircrack-ng
-#brew install -q bfg
-#brew install -q binutils
-#brew install -q binwalk
-#brew install -q cifer
-#brew install -q dex2jar
-#brew install -q dns2tcp
-#brew install -q fcrackzip
-#brew install -q foremost
-#brew install -q hashpump
-#brew install -q hydra
-#brew install -q john
-#brew install -q knock
-#brew install -q netpbm
-#brew install -q nmap
-#brew install -q pngcheck
-#brew install -q socat
-#brew install -q sqlmap
-#brew install -q tcpflow
-#brew install -q tcpreplay
-#brew install -q tcptrace
-#brew install -q ucspi-tcp # `tcpserver` etc.
-#brew install -q xpdf
-#brew install -q xz
+# brew install -q aircrack-ng
+# brew install -q bfg
+# brew install -q binutils
+# brew install -q binwalk
+# brew install -q cifer
+# brew install -q dex2jar
+# brew install -q dns2tcp
+# brew install -q fcrackzip
+# brew install -q foremost
+# brew install -q hashpump
+# brew install -q hydra
+# brew install -q john
+# brew install -q knock
+# brew install -q netpbm
+# brew install -q nmap
+# brew install -q pngcheck
+# brew install -q socat
+# brew install -q sqlmap
+# brew install -q tcpflow
+# brew install -q tcpreplay
+# brew install -q tcptrace
+# brew install -q ucspi-tcp # `tcpserver` etc.
+# brew install -q xpdf
+# brew install -q xz
 
 # Install other useful binaries.
 brew install -q ack
-#brew install -q exiv2
 brew install -q git
-brew install -q git-lfs
-brew install -q gs
-brew install -q imagemagick
-brew install -q lua
-brew install -q lynx
-brew install -q p7zip
-brew install -q pigz
-brew install -q pv
-brew install -q rename
-brew install -q rlwrap
-brew install -q ssh-copy-id
 brew install -q tree
-brew install -q vbindiff
-brew install -q zopfli
+# brew install -q exiv2       # read metadata from images
+# brew install -q git-lfs     # large file storage, store repo large files as pointers instead of content
+# brew install -q gs          # ghost script, pdf manipulation
+# brew install -q imagemagick
+# brew install -q lua         # lang, used mostly for plugins I think (ex: lightroom)
+# brew install -q lynx        # terminal web browser
+# brew install -q p7zip
+# brew install -q pigz        # gzip, but parallelized so it processes faster
+# brew install -q pv          # pipe viewer, shows stats on data streaming through terminal pipes
+# brew install -q rename      # file renaming utility
+# brew install -q rlwrap      # readline wrapper, adds readline functionality to inputs that don't support it (editing/history on inputs)
+# brew install -q ssh-copy-id # Add a public key to a remote machine's authorized_keys file
+# brew install -q vbindiff    # diff binary files, shows hex and text representations
 
 # Install Casks (GUI binaries)
 brew install -q --cask typora    # markdown editor/browser

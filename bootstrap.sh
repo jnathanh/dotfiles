@@ -75,21 +75,23 @@ fi
 cd ${DOTFILES_PATH}
 
 # configure mac settings
-./.macos
+./macos.sh
 
 # update homebrew state
 ./brew.sh
 
 # sync dotfiles to ~
 function doIt() {
-	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".osx" \
-		--exclude "bootstrap.sh" \
-		--exclude "README.md" \
-		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
-	source ~/.bash_profile;
+        rsync --exclude ".git/" \
+              --exclude ".DS_Store" \
+              --exclude "init" \
+              --exclude "README.md" \
+              --exclude "LICENSE-MIT.txt" \
+              --exclude "bootstrap.sh" \
+              --exclude "macos.sh" \
+              --exclude "LICENSE-MIT.txt" \
+              -avh --no-perms . ~;
+        source ~/.bash_profile;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
