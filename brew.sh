@@ -40,7 +40,7 @@ brew install -q gnupg
 brew install -q vim
 brew install -q grep
 brew install -q openssh
-#brew install -q screen
+brew install -q screen
 #brew install -q php
 #brew install -q gmp
 
