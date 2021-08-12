@@ -11,18 +11,18 @@ BREW_PREFIX=$(brew --prefix)
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-brew install coreutils
+brew install -q coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Install some other useful utilities like `sponge`.
-brew install moreutils
+brew install -q moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew install findutils
+brew install -q findutils
 # Install GNU `sed`, (overwrites the built-in `sed` via earlier PATH insertion, see .path file).
-brew install gnu-sed
+brew install -q gnu-sed
 # Install a modern version of Bash.
-brew install bash
-brew install bash-completion2
+brew install -q bash
+brew install -q bash-completion2
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -31,78 +31,78 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget` with IRI support.
-brew install wget
+brew install -q wget
 
 # Install GnuPG to enable PGP-signing commits.
-brew install gnupg
+brew install -q gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim
-brew install grep
-brew install openssh
-#brew install screen
-#brew install php
-#brew install gmp
+brew install -q vim
+brew install -q grep
+brew install -q openssh
+#brew install -q screen
+#brew install -q php
+#brew install -q gmp
 
 # Install font tools.
 #brew tap bramstein/webfonttools
-#brew install sfnt2woff
-#brew install sfnt2woff-zopfli
-#brew install woff2
+#brew install -q sfnt2woff
+#brew install -q sfnt2woff-zopfli
+#brew install -q woff2
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-#brew install aircrack-ng
-#brew install bfg
-#brew install binutils
-#brew install binwalk
-#brew install cifer
-#brew install dex2jar
-#brew install dns2tcp
-#brew install fcrackzip
-#brew install foremost
-#brew install hashpump
-#brew install hydra
-#brew install john
-#brew install knock
-#brew install netpbm
-#brew install nmap
-#brew install pngcheck
-#brew install socat
-#brew install sqlmap
-#brew install tcpflow
-#brew install tcpreplay
-#brew install tcptrace
-#brew install ucspi-tcp # `tcpserver` etc.
-#brew install xpdf
-#brew install xz
+#brew install -q aircrack-ng
+#brew install -q bfg
+#brew install -q binutils
+#brew install -q binwalk
+#brew install -q cifer
+#brew install -q dex2jar
+#brew install -q dns2tcp
+#brew install -q fcrackzip
+#brew install -q foremost
+#brew install -q hashpump
+#brew install -q hydra
+#brew install -q john
+#brew install -q knock
+#brew install -q netpbm
+#brew install -q nmap
+#brew install -q pngcheck
+#brew install -q socat
+#brew install -q sqlmap
+#brew install -q tcpflow
+#brew install -q tcpreplay
+#brew install -q tcptrace
+#brew install -q ucspi-tcp # `tcpserver` etc.
+#brew install -q xpdf
+#brew install -q xz
 
 # Install other useful binaries.
-brew install ack
-#brew install exiv2
-brew install git
-brew install git-lfs
-brew install gs
-brew install imagemagick
-brew install lua
-brew install lynx
-brew install p7zip
-brew install pigz
-brew install pv
-brew install rename
-brew install rlwrap
-brew install ssh-copy-id
-brew install tree
-brew install vbindiff
-brew install zopfli
+brew install -q ack
+#brew install -q exiv2
+brew install -q git
+brew install -q git-lfs
+brew install -q gs
+brew install -q imagemagick
+brew install -q lua
+brew install -q lynx
+brew install -q p7zip
+brew install -q pigz
+brew install -q pv
+brew install -q rename
+brew install -q rlwrap
+brew install -q ssh-copy-id
+brew install -q tree
+brew install -q vbindiff
+brew install -q zopfli
 
 # Install Casks (GUI binaries)
-brew install --cask typora    # markdown editor/browser
-brew install --cask mark-text # the original typora was branched from, but performs better where typora has bugs
-brew install --cask todotxt   # todo.txt GUI
-brew install --cask dropbox
-brew install --cask adobe-dng-converter # required by lrtimelapse
-brew install --cask lrtimelapse         # time lapse app with lightroom integration
-brew install --cask sublime-text
+brew install -q --cask typora    # markdown editor/browser
+brew install -q --cask mark-text # the original typora was branched from, but performs better where typora has bugs
+brew install -q --cask todotxt   # todo.txt GUI
+brew install -q --cask dropbox
+brew install -q --cask adobe-dng-converter # required by lrtimelapse
+brew install -q --cask lrtimelapse         # time lapse app with lightroom integration
+brew install -q --cask sublime-text
 
 # Remove outdated versions from the cellar.
 brew cleanup
