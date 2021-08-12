@@ -102,6 +102,7 @@ brew install --cask todotxt   # todo.txt GUI
 brew install --cask dropbox
 brew install --cask adobe-dng-converter # required by lrtimelapse
 brew install --cask lrtimelapse         # time lapse app with lightroom integration
+brew install --cask sublime-text
 
 # Remove outdated versions from the cellar.
 brew cleanup
