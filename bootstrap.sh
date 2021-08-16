@@ -83,15 +83,7 @@ cd ${DOTFILES_PATH}
 
 # sync dotfiles to ~
 function doIt() {
-        rsync --exclude ".git/" \
-              --exclude ".DS_Store" \
-              --exclude "init" \
-              --exclude "README.md" \
-              --exclude "LICENSE-MIT.txt" \
-              --exclude "bootstrap.sh" \
-              --exclude "macos.sh" \
-              --exclude "LICENSE-MIT.txt" \
-              -avh --no-perms . ~;
+        rsync -avh --no-perms home_files ~;
         source ~/.bash_profile;
 }
 
