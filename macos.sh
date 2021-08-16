@@ -779,28 +779,54 @@ defaults write com.apple.screencapture location ${HOME}/tmp
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Finder" \
-	"Google Chrome Canary" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"Opera" \
-	"Photos" \
-	"Safari" \
-	"SizeUp" \
-	"Spectacle" \
-	"SystemUIServer" \
-	"Terminal" \
-	"Transmission" \
-	"Tweetbot" \
-	"Twitter" \
-	"iCal"; do
-	killall "${app}" &> /dev/null
+function killApps() {
+    for app in "${processesToKill[@]}"; do
+      killall "${app}" &> /dev/null
+    done
+}
+
+appsToKill=(
+    "Activity Monitor"
+    "Address Book"
+    "Calendar"
+    "cfprefsd"
+    "Contacts"
+    "Dock"
+    "Finder"
+    "Google Chrome Canary"
+    "Google Chrome"
+    "Mail"
+    "Messages"
+    "Photos"
+    "Safari"
+    "SystemUIServer"
+    "Terminal"
+)
+
+# current process names
+runningProcessNames=$(ps -axc | awk '{print $4}' | uniq)
+
+# filter down to actually running processes
+processesToKill=()
+for i in "${appsToKill[@]}"; do
+    for j in $runningProcessNames; do
+        [[ $i == $j ]] && { processesToKill+=("$i"); break; }
+    done
 done
+
+# ask for confirmation
+if [ "$1" == "--force" -o "$1" == "-f" ]; then
+    killApps;
+else
+    printf -v appsToKillMsg "\n\t%s" "${processesToKill[@]}"
+    printf -v appsToKillMsg "%s\n" "${appsToKillMsg}"
+    promptMsg=$''
+    read -p "The following applications need to be restarted to apply settings.${appsToKillMsg}Kill them now? (this may leave some empty desktops to close if the apps are in full screen mode) y/n " -n 1;
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        killApps;
+    fi;
+fi;
+unset killApps;
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
