@@ -81,6 +81,9 @@ cd ${DOTFILES_PATH}
 # update homebrew state
 ./brew.sh
 
+# install node dev env
+./node.sh
+
 # sync dotfiles to ~
 function doIt() {
         rsync -avh --no-perms home_files ~;
