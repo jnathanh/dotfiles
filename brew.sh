@@ -80,6 +80,7 @@ brew install -q screen
 brew install -q ack
 brew install -q git
 brew install -q tree
+brew install -q jq          # cli json manipulation/formatting
 # brew install -q exiv2       # read metadata from images
 # brew install -q git-lfs     # large file storage, store repo large files as pointers instead of content
 # brew install -q gs          # ghost script, pdf manipulation
