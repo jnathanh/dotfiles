@@ -55,9 +55,6 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
-# manually bootstrap git completion because I messed it up somehow...
-source /usr/local/etc/bash_completion.d/git-completion.bash
-
 # set recipe home path
 export RECIPE_HOME="/Users/nhanna//Dropbox/recipes"
 
