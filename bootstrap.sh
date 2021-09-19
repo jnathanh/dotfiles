@@ -86,7 +86,7 @@ cd ${DOTFILES_PATH}
 
 # sync dotfiles to ~
 function doIt() {
-        rsync -avh --no-perms home_files ~;
+        rsync -avh --no-perms --exclude '.DS_Store' home_files/ ~;
         source ~/.bash_profile;
 }
 
