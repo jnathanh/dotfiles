@@ -107,6 +107,7 @@ brew install -q --cask rectangle
 brew install -q --cask google-chrome
 brew install -q --cask vuescan   # scanning software compatible with all scanners (since brother doesn't support my model anymore)
 brew install -q --cask quicken
+brew install -q --cask docker
 
 # Remove outdated versions from the cellar.
 brew cleanup
