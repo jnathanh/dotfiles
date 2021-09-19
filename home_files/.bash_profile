@@ -60,7 +60,3 @@ export RECIPE_HOME="/Users/nhanna//Dropbox/recipes"
 
 # add ssh keys to agent
 ssh-add ~/.ssh/jnathanh_github_id_rsa
-
-# initialize node version manager
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion (I don't actually think this is necessary)
