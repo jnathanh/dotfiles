@@ -10,7 +10,7 @@ set -eE -o functrace
 failure() {
   local lineno=$1
   local msg=$2
-  echo "${RED}Error:${UNFMT} Failed at $3:$lineno: $msg"
+  echo -e "${RED}Error:${UNFMT} Failed at $3:$lineno: $msg"
   echo "Failed at $3:$lineno: $msg" > $HOME/Desktop/dotfiles_bootstrap_error.txt
 }
 trap 'failure ${LINENO} "$BASH_COMMAND" "$BASH_SOURCE"' ERR
