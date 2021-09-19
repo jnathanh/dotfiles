@@ -41,6 +41,3 @@ export BASH_SILENCE_DEPRECATION_WARNING=1;
 
 # homebrew exports
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# node version manager
-export NVM_DIR="$HOME/.nvm"

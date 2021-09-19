@@ -84,6 +84,9 @@ cd ${DOTFILES_PATH}
 # install node dev env
 ./node.sh
 
+# install python dev env
+./python.sh
+
 # sync dotfiles to ~
 function doIt() {
         rsync -avh --no-perms --exclude '.DS_Store' home_files/ ~;
@@ -100,3 +103,5 @@ else
 	fi;
 fi;
 unset doIt;
+
+source ~/.bash_profile
