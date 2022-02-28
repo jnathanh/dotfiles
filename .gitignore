@@ -1,2 +1,5 @@
 # don't commit private configs
 .extra
+
+# intellij configs
+.idea/*
