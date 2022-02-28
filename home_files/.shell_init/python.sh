@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-# initialize conda
-conda init "$(basename "${SHELL}")"
+# initialize conda (time-consuming and noisy)
+#conda init "$(basename "${SHELL}")"
