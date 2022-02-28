@@ -10,3 +10,6 @@ export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH" # use gnu sed ov
 
 # rust setup
 export PATH=$HOME/.cargo/bin:$PATH
+
+# add go binaries
+export PATH=$(go env GOPATH)/bin:$PATH
