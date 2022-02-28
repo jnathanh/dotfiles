@@ -81,6 +81,15 @@ brew install -q ack
 brew install -q git
 brew install -q tree
 brew install -q jq          # cli json manipulation/formatting
+brew install -q dependency-check # OWASP cli tool for scanning a dir for CVE vulnerabilities
+brew install -q postgresql
+brew install -q go
+brew install -q awscli
+brew install -q parquet-tools
+brew install -q exiftool # cli for photo metadata read/write in most metadata/image formats
+
+
+
 # brew install -q exiv2       # read metadata from images
 # brew install -q git-lfs     # large file storage, store repo large files as pointers instead of content
 # brew install -q gs          # ghost script, pdf manipulation
@@ -95,6 +104,7 @@ brew install -q jq          # cli json manipulation/formatting
 # brew install -q ssh-copy-id # Add a public key to a remote machine's authorized_keys file
 # brew install -q vbindiff    # diff binary files, shows hex and text representations
 
+
 # Install Casks (GUI binaries)
 brew install -q --cask typora    # markdown editor/browser
 brew install -q --cask mark-text # the original typora was branched from, but performs better where typora has bugs
@@ -108,6 +118,11 @@ brew install -q --cask google-chrome
 brew install -q --cask vuescan   # scanning software compatible with all scanners (since brother doesn't support my model anymore)
 brew install -q --cask quicken
 brew install -q --cask docker
+brew install -q --cask visual-studio-code
+brew install -q --cask raspberry-pi-imager
+# brew install -q --cask intellij-idea-ce
+brew install -q --cask qlmarkdown # adds preview/quicklook support for markdown files
+brew install -q --cask arq # file backup client (backs up to s3 glacier), todo: how to auto-setup backups?
 
 # Remove outdated versions from the cellar.
 brew cleanup
