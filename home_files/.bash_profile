@@ -60,3 +60,6 @@ export RECIPE_HOME="/Users/nhanna//Dropbox/recipes"
 
 # add ssh keys to agent
 ssh-add ~/.ssh/jnathanh_github_id_rsa
+
+# initialize rust setup
+source $HOME/.cargo/env
