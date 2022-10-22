@@ -105,3 +105,19 @@ fi;
 unset doIt;
 
 source ~/.bash_profile
+
+# WIP
+# install user-specific event-based triggers
+echo "WIP: this is not ready to execute yet"
+for folder in ~/.event_triggers/*; do
+
+    inst="$folder/install.sh"
+    if [[ -f "$inst" && -x "$inst" ]]; then
+        source "$inst"
+    else
+        >&2 echo "to add an event trigger, you must include a folder that contains an executable install.sh file"
+    fi
+    unset inst
+
+done;
+unset folder;
