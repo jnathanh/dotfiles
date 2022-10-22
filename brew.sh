@@ -123,6 +123,7 @@ brew install -q --cask raspberry-pi-imager
 # brew install -q --cask intellij-idea-ce
 brew install -q --cask qlmarkdown # adds preview/quicklook support for markdown files
 brew install -q --cask arq # file backup client (backs up to s3 glacier), todo: how to auto-setup backups?
+brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate backup drive... and maybe faster reads?)
 
 # Remove outdated versions from the cellar.
 brew cleanup
