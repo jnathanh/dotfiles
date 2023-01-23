@@ -179,3 +179,24 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function exportlesson() {
+	inputPath="$1"
+
+	if [ -z "${inputPath}" ]; then
+		echo "path to input file is required as the 1st argument";
+		return 1;
+	fi;
+
+	if [ ! -f "${inputPath}" ]; then
+		echo "$inputPath does not exist";
+		return 1;
+	fi;
+
+	outputPath="$HOME/Downloads/$(basename $inputPath)"
+
+	# replace comments with annotations that will actually print/export
+	cat "$inputPath" | sed -re 's/(<!--)/^NOTE^:/g' | sed -re 's/(-->)/^NOTEEND^/g' > "$outputPath"
+	echo "replaced comments with note annotations"
+	echo "new file written to $outputPath"
+}

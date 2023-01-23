@@ -152,3 +152,6 @@ alias ll='ls -lAh ${colorflag}'
 
 # kubectl alias
 alias kb='kubectl'
+
+# open a file in typora
+alias typora="open -a typora"

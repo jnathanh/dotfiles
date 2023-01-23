@@ -82,11 +82,13 @@ brew install -q git
 brew install -q tree
 brew install -q jq          # cli json manipulation/formatting
 brew install -q dependency-check # OWASP cli tool for scanning a dir for CVE vulnerabilities
-brew install -q postgresql
+brew install -q postgresql@14
 brew install -q go
 brew install -q awscli
 brew install -q parquet-tools
 brew install -q exiftool # cli for photo metadata read/write in most metadata/image formats
+brew install -q wireshark # cli for wireshark
+brew install -q pandoc # convert between file types (dependency of typora)
 
 
 
@@ -103,6 +105,18 @@ brew install -q exiftool # cli for photo metadata read/write in most metadata/im
 # brew install -q rlwrap      # readline wrapper, adds readline functionality to inputs that don't support it (editing/history on inputs)
 # brew install -q ssh-copy-id # Add a public key to a remote machine's authorized_keys file
 # brew install -q vbindiff    # diff binary files, shows hex and text representations
+
+
+brew install -q hugo
+
+# azure tools
+brew install -q azure-cli
+brew tap azure/bicep
+brew install -q bicep
+brew tap azure/functions
+brew install -q azure-functions-core-tools@4
+brew install -q --cask powershell
+brew install -q --cask azure-data-studio
 
 
 # Install Casks (GUI binaries)
@@ -124,6 +138,7 @@ brew install -q --cask raspberry-pi-imager
 brew install -q --cask qlmarkdown # adds preview/quicklook support for markdown files
 brew install -q --cask arq # file backup client (backs up to s3 glacier), todo: how to auto-setup backups?
 brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate backup drive... and maybe faster reads?)
+brew install -q --cask wireshark # for inspecting network traffic
 
 # Remove outdated versions from the cellar.
 brew cleanup
