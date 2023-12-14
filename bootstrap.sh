@@ -87,10 +87,13 @@ cd ${DOTFILES_PATH}
 # install python dev env
 ./python.sh
 
+# install ruby dev env
+./ruby.sh
+
 # sync dotfiles to ~
 function doIt() {
-        rsync -avh --no-perms --exclude '.DS_Store' home_files/ ~;
-        source ~/.bash_profile;
+    rsync -avh --no-perms --exclude '.DS_Store' home_files/ ~;
+    source ~/.bash_profile;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

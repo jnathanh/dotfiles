@@ -81,6 +81,11 @@ brew install -q ack
 brew install -q git
 brew install -q tree
 brew install -q jq          # cli json manipulation/formatting
+brew install -q miller      # cli for csv manipulation
+brew install -q xsv         # cli for csv manipulation
+brew tap liquidaty/zsv
+brew install -q zsv         # cli for csv manipulation
+brew install -q dasel       # reading data from many file formats with single syntax
 brew install -q dependency-check # OWASP cli tool for scanning a dir for CVE vulnerabilities
 brew install -q postgresql@14
 brew install -q go
@@ -89,7 +94,7 @@ brew install -q parquet-tools
 brew install -q exiftool # cli for photo metadata read/write in most metadata/image formats
 brew install -q wireshark # cli for wireshark
 brew install -q pandoc # convert between file types (dependency of typora)
-
+brew install -q frum      # the latest ruby version manager (fast, written in Rust)
 
 
 # brew install -q exiv2       # read metadata from images
