@@ -11,10 +11,24 @@ ssh-add ~/.ssh/your_key_name_here
 /bin/bash -c "$(curl -H 'Cache-Control: no-cache' -fsSL https://raw.githubusercontent.com/jnathanh/dotfiles/main/bootstrap.sh)"
 ```
 
-### Steps that require manual
+### Manual Steps
 
-- add google account
-	- enable for contacts
+#### add google account
+- enable for contacts
+
+#### add .netrc file
+
+This step allows `go mod` to download private packages.
+
+Enable access to the following github repos
+- go-lib (required by usaa-downloader)
+
+It should look something like this
+```
+machine github.com
+  login YOUR_GITHUB_USERNAME
+  password YOUR_GITHUB_PERSONAL_ACCESS_TOKEN_HERE
+```
 
 ### Using Git and the bootstrap script
 
