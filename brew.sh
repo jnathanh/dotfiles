@@ -95,10 +95,19 @@ brew install -q postgresql@14
 brew install -q go
 brew install -q awscli
 brew install -q parquet-tools
-brew install -q exiftool # cli for photo metadata read/write in most metadata/image formats
+brew install -q exiftool  # cli for photo metadata read/write in most metadata/image formats
 brew install -q wireshark # cli for wireshark
-brew install -q pandoc # convert between file types (dependency of typora)
+brew install -q pandoc    # convert between file types (dependency of typora)
+brew install -q ykman     # yubikey manager
+brew install -q bat       # syntax highlighting version of cat
+brew install -q duckdb    # db client for interacting with local parquet, csv, json, and more
+brew install -q imessage-exporter # enables exporting imessage history in txt or html
+brew install -q mas       # CLI for installing from app store
 brew install -q frum      # the latest ruby version manager (fast, written in Rust)
+brew install -q youtube-dl     # download youtube videos
+brew install -q ffmpeg         # tool for video/audio conversions
+brew install -q openai-whisper # audio -> text conversion ML model cli
+brew install -q gh             # github cli, for easily creating releases
 
 
 # brew install -q exiv2       # read metadata from images
