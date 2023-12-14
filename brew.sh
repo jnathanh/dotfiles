@@ -24,6 +24,10 @@ brew install -q gnu-sed
 brew install -q bash
 brew install -q bash-completion2
 
+# use friendly differ
+brew install -q less # recent version of less (required for git-delta)
+brew install -q git-delta
+
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
