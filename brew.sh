@@ -158,5 +158,16 @@ brew install -q --cask arq # file backup client (backs up to s3 glacier), todo: 
 brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate backup drive... and maybe faster reads?)
 brew install -q --cask wireshark # for inspecting network traffic
 
+
+# private Formula
+brew tap jnathanh/private git@github.com:jnathanh/homebrew-private.git
+
+brew install -q jnathanh/private/usaa-downloader
+brew services start jnathanh/private/usaa-downloader
+
+brew install -q jnathanh/private/premera-downloader
+brew services start jnathanh/private/premera-downloader
+
+
 # Remove outdated versions from the cellar.
 brew cleanup
