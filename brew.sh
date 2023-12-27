@@ -108,6 +108,7 @@ brew install -q youtube-dl     # download youtube videos
 brew install -q ffmpeg         # tool for video/audio conversions
 brew install -q openai-whisper # audio -> text conversion ML model cli
 brew install -q gh             # github cli, for easily creating releases
+brew install -q duti           # cli to configure the default app for a given file type
 
 
 # brew install -q exiv2       # read metadata from images
