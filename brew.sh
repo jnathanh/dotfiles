@@ -169,6 +169,9 @@ brew services start jnathanh/private/usaa-downloader
 brew install -q jnathanh/private/premera-downloader
 brew services start jnathanh/private/premera-downloader
 
+brew install -q jnathanh/private/ecobee-downloader
+brew services start jnathanh/private/ecobee-downloader
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
