@@ -87,8 +87,7 @@ brew install -q tree
 brew install -q jq          # cli json manipulation/formatting
 brew install -q miller      # cli for csv manipulation
 brew install -q xsv         # cli for csv manipulation
-brew tap liquidaty/zsv
-brew install -q zsv         # cli for csv manipulation
+brew install -q liquidaty/zsv/zsv         # cli for csv manipulation
 brew install -q dasel       # reading data from many file formats with single syntax
 brew install -q dependency-check # OWASP cli tool for scanning a dir for CVE vulnerabilities
 brew install -q postgresql@14
@@ -109,7 +108,15 @@ brew install -q ffmpeg         # tool for video/audio conversions
 brew install -q openai-whisper # audio -> text conversion ML model cli
 brew install -q gh             # github cli, for easily creating releases
 brew install -q duti           # cli to configure the default app for a given file type
+brew install -q sqlite         # cli for sqlite db, note this requires manually adding to your path to use
+brew install -q tfenv          # terraform version manager
+brew install -q pyenv          # python version manager, this is what I use to manage the global python version
 
+# nice-to-have, but not necessary
+# brew install -q sqlite-analyzer # profile a sqlite db
+# brew install -q graphviz        # for graphing visualizations (needed for some golang pprof outputs)
+# brew install -q graphana        # for creating dashboards/analytics
+# brew install -q gphotosuploader/tap/gphotos-uploader-cli # cli for uploading photos to google photos, saved my bacon for bulk uploading without tedious mouse work
 
 # brew install -q exiv2       # read metadata from images
 # brew install -q git-lfs     # large file storage, store repo large files as pointers instead of content
@@ -154,10 +161,11 @@ brew install -q --cask docker
 brew install -q --cask visual-studio-code
 brew install -q --cask raspberry-pi-imager
 # brew install -q --cask intellij-idea-ce
-brew install -q --cask qlmarkdown # adds preview/quicklook support for markdown files
-brew install -q --cask arq # file backup client (backs up to s3 glacier), todo: how to auto-setup backups?
+brew install -q --cask qlmarkdown   # adds preview/quicklook support for markdown files
+brew install -q --cask arq          # file backup client (backs up to s3 glacier), todo: how to auto-setup backups?
 brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate backup drive... and maybe faster reads?)
-brew install -q --cask wireshark # for inspecting network traffic
+brew install -q --cask wireshark    # for inspecting network traffic
+# brew install -q --cask microsoft-azure-storage-explorer # visual explorer for azure storage accounts
 
 
 # private Formula
