@@ -4,9 +4,9 @@
 export PATH=/usr/local/bin/:$PATH
 
 # add homebrew binaries to path
-brew_prefix=$(brew --prefix)
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+brew_prefix=$(brew --prefix)
 export PATH="$brew_prefix/opt/gnu-sed/libexec/gnubin:$PATH" # use gnu sed over built-in sed
 # the brew sqlite package is keg-only without binaries in the main bin folders, to avoid conflicting with system sqlite
 export PATH="$brew_prefix/opt/sqlite/bin:$PATH"
