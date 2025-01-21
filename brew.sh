@@ -165,6 +165,7 @@ brew install -q --cask qlmarkdown   # adds preview/quicklook support for markdow
 brew install -q --cask arq          # file backup client (backs up to s3 glacier), todo: how to auto-setup backups?
 brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate backup drive... and maybe faster reads?)
 brew install -q --cask wireshark    # for inspecting network traffic
+brew install -q --cask ghostty      # an improved shell (faster, more features)
 # brew install -q --cask microsoft-azure-storage-explorer # visual explorer for azure storage accounts
 
 
