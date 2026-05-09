@@ -107,6 +107,7 @@ brew install -q youtube-dl     # download youtube videos
 brew install -q ffmpeg         # tool for video/audio conversions
 brew install -q openai-whisper # audio -> text conversion ML model cli
 brew install -q gh             # github cli, for easily creating releases
+brew install -q copilot-cli # AI-powered CLI suggestions
 brew install -q duti           # cli to configure the default app for a given file type
 brew install -q sqlite         # cli for sqlite db, note this requires manually adding to your path to use
 brew install -q tfenv          # terraform version manager
