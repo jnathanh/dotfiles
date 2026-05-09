@@ -136,6 +136,8 @@ brew install -q pyenv          # python version manager, this is what I use to m
 
 brew install -q hugo
 
+brew tap hashicorp/tap && brew install hashicorp/tap/packer # homelab: packer for building vm images
+
 # azure tools
 brew install -q azure-cli
 brew tap azure/bicep
