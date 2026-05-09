@@ -169,6 +169,7 @@ brew install -q --cask arq          # file backup client (backs up to s3 glacier
 brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate backup drive... and maybe faster reads?)
 brew install -q --cask wireshark    # for inspecting network traffic
 brew install -q --cask ghostty      # an improved shell (faster, more features)
+brew install -q --cask calibre      # ebook management/conversion
 # brew install -q --cask microsoft-azure-storage-explorer # visual explorer for azure storage accounts
 
 
