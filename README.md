@@ -117,6 +117,16 @@ When setting up a new Mac, you may want to install some common [Python](https://
 
 Some of the functionality of these dotfiles depends on formulae installed by `pip.sh`. If you don’t plan to run `pip.sh`, you should look carefully through the script and manually install any particularly important ones. A good example is the json prettify function, which depends on pymentize (only available through a python package manager).
 
+### AI agent configuration
+
+AI agent configuration (agent instructions, skills, plugins, per-client
+settings) is deliberately **not** in this repo — it lives in a separate private
+repo, since this one is public. See [`docs/AI_CONFIG.md`](docs/AI_CONFIG.md) for
+the clone URL and the two commands that deploy it.
+
+`bootstrap.sh` links it into place automatically when that repo is already
+cloned, and prints a pointer when it is not.
+
 ## Feedback
 
 Suggestions/improvements

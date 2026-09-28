@@ -109,6 +109,18 @@ unset doIt;
 
 source ~/.bash_profile
 
+# AI agent configuration lives in a separate private repo (docs/AI_CONFIG.md).
+# `link` only creates/repairs symlinks: idempotent and non-destructive. Never
+# `adopt` here — the verb that moves existing data requires a human who has read
+# a `plan`.
+AI_REPO="$HOME/src/ai-customizations"
+if [ -x "$AI_REPO/link.sh" ]; then
+	"$AI_REPO/link.sh" link
+else
+	>&2 echo "AI agent config not present. See docs/AI_CONFIG.md."
+fi
+unset AI_REPO
+
 # WIP
 # install user-specific event-based triggers
 echo "WIP: this is not ready to execute yet"
