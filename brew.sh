@@ -97,6 +97,7 @@ brew install -q parquet-tools
 brew install -q exiftool  # cli for photo metadata read/write in most metadata/image formats
 brew install -q wireshark # cli for wireshark
 brew install -q pandoc    # convert between file types (dependency of typora)
+brew install -q d2        # declarative diagrams (.d2 source -> svg), used for in-repo design diagrams
 brew install -q ykman     # yubikey manager
 brew install -q bat       # syntax highlighting version of cat
 brew install -q duckdb    # db client for interacting with local parquet, csv, json, and more

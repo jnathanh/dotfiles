@@ -10,3 +10,9 @@
 
 # install pygments (required for json function)
 pip install pygments
+
+# headless browser automation; used to measure rendered SVG geometry (text
+# extents, overlaps) for the diagram linter. The browser itself is a separate
+# ~95MB download that pip does not fetch.
+pip install playwright
+python3 -m playwright install chromium
