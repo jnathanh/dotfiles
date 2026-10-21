@@ -114,6 +114,18 @@ brew install -q duti           # cli to configure the default app for a given fi
 brew install -q sqlite         # cli for sqlite db, note this requires manually adding to your path to use
 brew install -q tfenv          # terraform version manager
 brew install -q pyenv          # python version manager, this is what I use to manage the global python version
+brew install -q ansible        # configuration management / provisioning
+brew install -q ocrmypdf       # adds a searchable OCR text layer to scanned PDFs (used by smart-ocr)
+brew install -q gocr           # simple OCR cli
+brew install -q yq             # cli yaml/xml/toml manipulation (jq for yaml)
+brew install -q todo-txt       # todo.txt cli
+brew install -q visidata       # terminal spreadsheet/data explorer
+brew install -q mysql-client   # mysql cli client
+brew install -q nvm            # node version manager
+brew install -q rustup         # rust toolchain manager
+brew install -q sshpass        # non-interactive ssh password auth (homelab bootstrapping)
+brew install -q whalebrew      # run cli tools as docker containers
+brew install -q grafana        # dashboards/analytics
 
 # nice-to-have, but not necessary
 # brew install -q sqlite-analyzer # profile a sqlite db
@@ -172,6 +184,15 @@ brew install -q --cask paragon-ntfs # ntfs driver (allows writing to seagate bac
 brew install -q --cask wireshark    # for inspecting network traffic
 brew install -q --cask ghostty      # an improved shell (faster, more features)
 brew install -q --cask calibre      # ebook management/conversion
+brew install -q --cask claude-code  # Claude Code cli
+brew install -q --cask docker-desktop # replaces the older `docker` cask name above
+brew install -q --cask gcloud-cli   # google cloud sdk
+brew install -q --cask miniconda    # conda python environments
+brew install -q --cask tad          # csv/parquet/sqlite viewer
+brew install -q --cask temurin      # JDK
+brew install -q --cask virtualbox   # VMs (truenas-test-base)
+brew install -q --cask arq-cloud-backup # Arq Cloud Backup app (installed alongside arq)
+brew install -q --cask wireshark-app # current cask name for the wireshark GUI
 # brew install -q --cask microsoft-azure-storage-explorer # visual explorer for azure storage accounts
 
 
